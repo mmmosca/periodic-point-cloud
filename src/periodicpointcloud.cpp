@@ -26,7 +26,6 @@ std::vector<Eigen::VectorXd>& PeriodicPointCloud::getPointCloud() {
 }
 
 void PeriodicPointCloud::updateCoefficientsForEveryDirection(int n) {
-	//assert(n > 0 && "Number of positive coefficients must be > 0");
 	this->clearCoefficients();
 	for (int i = -n; i <= n; ++i) {
 		this->C.push_back(i);
@@ -34,7 +33,6 @@ void PeriodicPointCloud::updateCoefficientsForEveryDirection(int n) {
 }
 
 void PeriodicPointCloud::updateCoefficientsForPositiveDirection(int n) {
-	//assert(n > 0 && "Number of positive coefficients must be > 0");
 	this->clearCoefficients();
 	for (int i = 0; i <= n; ++i) {
 		this->C.push_back(i);
@@ -42,7 +40,6 @@ void PeriodicPointCloud::updateCoefficientsForPositiveDirection(int n) {
 }
 
 void PeriodicPointCloud::updateCoefficientsFromRange(int i, int j) {
-	//assert(n > 0 && "Number of positive coefficients must be > 0");
 	this->clearCoefficients();
 	for (int n = i; n <= j; ++n) {
 		this->C.push_back(n);
