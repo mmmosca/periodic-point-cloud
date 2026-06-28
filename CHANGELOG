@@ -1,0 +1,7 @@
+# Project changes
+
+## [0.1.0]
+    - Fix copyright statements
+    - Add optional BUILD_TESTING
+    - Improve documentation
+    - Subproject extracted from VoronoiLatticeDistances
