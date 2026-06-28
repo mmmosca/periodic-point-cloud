@@ -27,6 +27,11 @@ project (
 
 include(FetchContent)
 
+if(DEFINED BUILD_TESTING)
+    set(_BUILD_TESTING_SAVE "${BUILD_TESTING}")
+    set(_BUILD_TESTING_WAS_DEFINED TRUE)
+endif()
+
 FetchContent_Declare(
     Eigen3
     URL https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.gz
@@ -34,7 +39,12 @@ FetchContent_Declare(
 
 set(BUILD_TESTING OFF CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(Eigen3)
-set(BUILD_TESTING ON CACHE BOOL "" FORCE)
+
+if(_BUILD_TESTING_WAS_DEFINED)
+    set(BUILD_TESTING "${_BUILD_TESTING_SAVE}" CACHE BOOL "" FORCE)
+else()
+    unset(BUILD_TESTING CACHE)
+endif()
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
