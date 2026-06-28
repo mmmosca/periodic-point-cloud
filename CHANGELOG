@@ -1,5 +1,6 @@
 # Project changes
 
+    - Add cmake variable in CI
 ## [0.1.0]
     - Fix copyright statements
     - Add optional BUILD_TESTING
