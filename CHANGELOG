@@ -1,5 +1,6 @@
 # Project changes
 
+    - Move cmake standards
     - Add cmake variable in CI
 ## [0.1.0]
     - Fix copyright statements

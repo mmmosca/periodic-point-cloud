@@ -24,7 +24,12 @@ project (
     DESCRIPTION  "Periodic point cloud generator"
     LANGUAGES CXX
 )
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+    
 include(FetchContent)
 
 if(DEFINED BUILD_TESTING)
@@ -46,11 +51,6 @@ else()
     unset(BUILD_TESTING CACHE)
 endif()
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
-
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_library(periodic_point_cloud
     src/periodicpointcloud.cpp
