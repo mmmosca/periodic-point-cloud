@@ -45,6 +45,6 @@ std::vector<Eigen::Vector3d> pointcloud = ppc.getPointCloud();
 ```
 cmake -B build -S . -L -DCMAKE_INSTALL_PREFIX=install
 cmake --build build --target install --config Debug
-cd
+cd build
 ctest --build-config Debug --build-target install
 ```
